@@ -29,21 +29,31 @@ files_to_remove <- c(files_to_remove,
                      "magic-classg.csv",
                      "magic-classh.csv",
                      "marketing-class6.csv",
+                     "marketing-class7.csv",
                      "marketing-class9.csv",
+                     "mushroom-classe.csv",
                      "penbased-class0.csv",
                      "penbased-class1.csv",
                      "penbased-class2.csv",
                      "penbased-class4.csv",
                      "penbased-class7.csv",
+                     "ring-class0.csv",
                      "ring-class1.csv",
                      "shuttle-class1.csv",
-                     "shuttle-class4.csv"
+                     "shuttle-class4.csv",
+		     "satimage-class2.csv",
+		     "thyroid-class3.csv",
+		     "titanic-class-1.csv",
+		     "titanic-class1.csv",
+		     "twonorm-class1.csv"
                      )
 
-files <- files[!(files %in% files2)]
-
+files <- files[!(files %in% files_to_remove)]
+i <- 0
 for (file in files){
-  print(file)
+  i <- i + 1
+  cat("Calculating complexity of", file, "(", i, "of", length(files), ")\n")
+  
   df <- read_csv(paste0(path_in, file),
                  show_col_types = FALSE)
   
