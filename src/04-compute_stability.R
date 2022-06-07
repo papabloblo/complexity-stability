@@ -8,8 +8,11 @@ files <- list.files(path_in)
 files <- str_remove(files, ".csv")
 
 list_df <- list()
+i <- 0
 for (f in files){
-  z <- read_csv(paste0(path_in, f, ".csv")) 
+  i <- i + 1
+  cat("Calculating stability of", f, "(", i, "of", length(files), ")\n")
+  z <- read_csv(paste0(path_in, f, ".csv"), show_col_types = FALSE) 
   
   z <- na.omit(z)
   z <- z[is.finite(z$loglik),]
