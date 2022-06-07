@@ -1,6 +1,6 @@
 library(tidyverse)
 
-path_in <- "data/raw/keel-datasets/"
+path_in <- "data/00-raw/keel-datasets/"
 files <- list.files(path_in)
 
 path_out <- "data/01-keel_datasets/"
