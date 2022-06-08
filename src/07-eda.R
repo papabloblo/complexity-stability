@@ -41,7 +41,7 @@ stability_complexity2 <- stability_complexity %>%
 stability_complexity2 <- stability_complexity2 %>% 
   left_join(stability_complexity_clus, by = "dataset")
 
-stability_complexity2 %>% 
+p1 <- stability_complexity2 %>% 
   ggplot(aes(x = value, y = loglik_max_loglik
              #, color = as.character(clusterh)
              )) + 
@@ -52,8 +52,10 @@ stability_complexity2 %>%
   ) +
   theme_minimal()
 
+#ggsave("results/loglik_vs_complexity.png", p1, width = 30, height = 20, units = "cm")
+ggsave("results/loglik_vs_complexity.pdf", p1, width = 30, height = 20, units = "cm")
 
-stability_complexity2 %>% 
+p2 <- stability_complexity2 %>% 
   ggplot(aes(x = value, y = stability_max_loglik
              #, color = as.character(cluster)
              )
@@ -64,6 +66,9 @@ stability_complexity2 %>%
     title = "Stability"
   ) +
   theme_minimal()
+
+#ggsave("results/stability_vs_complexity.png", p2, width = 30, height = 20, units = "cm")
+ggsave("results/stability_vs_complexity.pdf", p2, width = 30, height = 20, units = "cm")
 
 stability_complexity %>% 
   ggplot(aes(x = stability_max_loglik, y = loglik_max_loglik)) +
