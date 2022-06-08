@@ -3,7 +3,12 @@ library(tidyverse)
 path_in <- "data/00-raw/keel-datasets/"
 files <- list.files(path_in)
 
+
 path_out <- "data/01-keel_datasets/"
+
+if (!dir.exists(path_out)){
+  dir.create(path_out)
+}
 
 i <- 0
 for (f in files){

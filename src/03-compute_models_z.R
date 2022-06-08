@@ -8,6 +8,10 @@ source("src/00-aux/data_generation.R")
 path_in <- "data/02-clean_datasets/"
 files <- list.files(path_in)
 
+if (!dir.exists("data/03-z/")){
+  dir.create("data/03-z/")
+}
+
 n_bootstrap <- 100
 
 n_lambda <- 1000

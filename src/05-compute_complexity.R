@@ -1,6 +1,11 @@
 library(ECoL)
 library(tidyverse)
 
+if (!dir.exists("data/04-complexity_measures/")){
+  dir.create("data/04-complexity_measures/")
+}
+
+
 path_in <- "data/02-clean_datasets/"
 files <- list.files(path_in)
 

@@ -5,6 +5,10 @@ source("src/00-aux/cleanDatasets.R")
 path_in <- "data/01-keel_datasets/"
 files <- list.files(path_in)
 
+if (!dir.exists("data/02-clean_datasets/")){
+  dir.create("data/02-clean_datasets/")
+}
+
 i <- 0
 for (f in files){
   i <- i + 1
