@@ -52,7 +52,7 @@ p1 <- stability_complexity2 %>%
   ) +
   theme_minimal()
 
-#ggsave("results/loglik_vs_complexity.png", p1, width = 30, height = 20, units = "cm")
+ggsave("results/loglik_vs_complexity.png", p1, width = 30, height = 20, units = "cm")
 ggsave("results/loglik_vs_complexity.pdf", p1, width = 30, height = 20, units = "cm")
 
 p2 <- stability_complexity2 %>% 
@@ -67,7 +67,8 @@ p2 <- stability_complexity2 %>%
   ) +
   theme_minimal()
 
-#ggsave("results/stability_vs_complexity.png", p2, width = 30, height = 20, units = "cm")
+
+ggsave("results/stability_vs_complexity.png", p2, width = 30, height = 20, units = "cm")
 ggsave("results/stability_vs_complexity.pdf", p2, width = 30, height = 20, units = "cm")
 
 stability_complexity %>% 
